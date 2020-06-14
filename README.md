@@ -1,0 +1,2 @@
+# common
+General Go functions
