@@ -36,10 +36,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-go-
 
-    - name: Build
+#    - name: Build
       # 这里build 时交叉编译并设置使用所有内置库静态编译程序
       # 方便最后一步做出的Docker镜像小一些
-      run: CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o main .
+#      run: CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o main .
       
     - name: Staticcheck
       run: |

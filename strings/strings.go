@@ -43,23 +43,6 @@ func StrToBytes(s string) (b []byte) {
 
 // SnakeCasedName convert String into Snake Case
 // ex: FooBar -> foo_bar
-func snakeCasedNameOld(name string) string {
-	newstr := make([]rune, 0)
-	for idx, chr := range name {
-		if isUpper := 'A' <= chr && chr <= 'Z'; isUpper {
-			if idx > 0 {
-				newstr = append(newstr, '_')
-			}
-			chr -= ('A' - 'a')
-		}
-		newstr = append(newstr, chr)
-	}
-
-	return string(newstr)
-}
-
-// SnakeCasedName convert String into Snake Case
-// ex: FooBar -> foo_bar
 func SnakeCasedName(name string) string {
 	newstr := make([]byte, 0, len(name)+1)
 	for i := 0; i < len(name); i++ {
