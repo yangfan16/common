@@ -49,7 +49,7 @@ func (list *ItemLinkedList) Insert(i int, t Item) error {
 	list.lock.Lock()
 	defer list.lock.Unlock()
 	if i < 0 || i > list.size {
-		return fmt.Errorf("Index %d out of bonuds", i)
+		return fmt.Errorf("INDEX %d OUT OF BOUNDS", i)
 	}
 	newNode := Node{t, nil}
 
@@ -79,7 +79,7 @@ func (list *ItemLinkedList) RemoveAt(i int) (*Item, error) {
 	defer list.lock.Unlock()
 
 	if i < 0 || i > list.size {
-		return nil, fmt.Errorf("Index %d out of bonuds", i)
+		return nil, fmt.Errorf("INDEX %d OUT OF BOUNDS", i)
 	}
 
 	curNode := list.head
